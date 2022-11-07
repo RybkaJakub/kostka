@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon" href="img/dice-png-transparent-images--png-all-4.png" type="image/ico" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -14,11 +14,11 @@
 </head>
 
 <body>
-    <header class="jumbotron bg-warning">
+    <header class="header">
         <h1 class="display-3 text-light text-center">Vsázení na kostky</h1>
     </header>
     <main class="container">
-        <div id="skore" class="score alert-warning">
+        <div id="skore" class="score">
             <p>Aktuální skóre</p>
             20000 V-Bucksů
         </div>
@@ -33,11 +33,11 @@
         </div>
         <br>
         <br>
-        <div id="result" class="alert alert-warning">Výsledky</div>
+        <div id="result" class="style">Výsledky</div>
         <div>
             <button class="btn btn-danger" id="play">HREJ</button>
         </div>
-        <div class="alert alert-warning pravidla">
+        <div class="style pravidla">
             <h3>Jak funguje tato hra</h3>
             <ul class="pravidla">
                 <li></li>
@@ -49,6 +49,12 @@
             </ul>
         </div>
     </main>
+    <audio id="kostka" loop preload="auto">
+        <source src="kostka.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="roll" preload="auto">
+        <source src="roll.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

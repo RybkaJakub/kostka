@@ -7,6 +7,8 @@ let soucet;
 let spravny = 0;
 let blizko = 0;
 let spatne = 0;
+var roll = document.getElementById('roll');
+var audio = document.getElementById('kostka');
 // Proměnná typu pole, do níž uložíme body
 let rounds = [];
 
@@ -31,10 +33,13 @@ play.addEventListener('click', function() {
     if (!timer && score>0) {
         play.innerText = 'STOP'
         timer = setInterval(animace, 40);
+        audio.play();
     } else {
         play.innerText = 'HREJ'
         clearInterval(timer);
         timer = false;
+        audio.pause();
+        roll.play();
         soucet = turn + turn2 + turn3;
         result.innerHTML += soucet;
         if ((document.getElementById('guess').value)-1==soucet || ((document.getElementById('guess').value)+1==soucet)){

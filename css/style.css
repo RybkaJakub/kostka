@@ -1,12 +1,15 @@
 .score{
     left: 100px;
     padding: 25px;
-    border-radius: 50px;
+    border-radius: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     width: 50%;
+    background-color: rgba(52, 168, 235,80%);
+    color: white;
+    font-weight: bold;
 }
 .size{
     display: block;
@@ -28,4 +31,18 @@
     margin-left: auto;
     margin-right: auto;
     width: 7%;
+}
+.header{
+    background-color: rgba(52, 168, 235,80%);
+    color: white;
+    font-weight: bold;
+    padding: 50px;
+    margin-bottom: 30px;
+}
+.style{
+    background-color: rgba(52, 168, 235,80%);
+    color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 20px;
 }
