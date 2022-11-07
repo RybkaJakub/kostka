@@ -63,12 +63,13 @@ play.addEventListener('click', function() {
             skore.innerHTML= `<p>Aktuální Skóre</p>`;
             skore.innerHTML+= `<p>${score} V-Bucksů</p>`;
         }
-        else if (score = vyhra || score> vyhra){
+        else if (score == vyhra || score> vyhra){
             skore.innerHTML= `<p>Vyhrál jsi! Gratuluji. Pro novou hru resetuj stránku</p>`;
         }
         else{
             skore.innerHTML= `<p>Jsi na nule. Pro novou hru resetuj stránku</p>`;
         }
         result.innerHTML = stats();
+        console.log(score)
     }
 })
