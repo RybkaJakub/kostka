@@ -7,8 +7,9 @@ let soucet;
 let spravny = 0;
 let blizko = 0;
 let spatne = 0;
-var roll = document.getElementById('roll');
-var audio = document.getElementById('kostka');
+let vyhra = 45000;
+let roll = document.getElementById('roll');
+let audio = document.getElementById('kostka');
 // Proměnná typu pole, do níž uložíme body
 let rounds = [];
 
@@ -30,11 +31,15 @@ function stats(){
 }
 
 play.addEventListener('click', function() {
-    if (!timer && score>0) {
+    if (!timer && score>0 && score < vyhra && score != vyhra) {
         play.innerText = 'STOP'
         timer = setInterval(animace, 40);
         audio.play();
-    } else {
+    }
+    else if (timer){
+        let guess = document.getElementById('guess').value;
+        let g1 = guess++ && guess--;
+        let g2 = guess-1;
         play.innerText = 'HREJ'
         clearInterval(timer);
         timer = false;
@@ -42,7 +47,7 @@ play.addEventListener('click', function() {
         roll.play();
         soucet = turn + turn2 + turn3;
         result.innerHTML += soucet;
-        if ((document.getElementById('guess').value)-1==soucet || ((document.getElementById('guess').value)+1==soucet)){
+        if (g1 == soucet || g2 == soucet){
             score += 3000;
             blizko++;
         }
@@ -54,9 +59,12 @@ play.addEventListener('click', function() {
             score -= 1500;
             spatne++;
         }
-        if (score>0){
+        if (score>0 && score < vyhra){
             skore.innerHTML= `<p>Aktuální Skóre</p>`;
             skore.innerHTML+= `<p>${score} V-Bucksů</p>`;
+        }
+        else if (score = vyhra || score> vyhra){
+            skore.innerHTML= `<p>Vyhrál jsi! Gratuluji. Pro novou hru resetuj stránku</p>`;
         }
         else{
             skore.innerHTML= `<p>Jsi na nule. Pro novou hru resetuj stránku</p>`;
