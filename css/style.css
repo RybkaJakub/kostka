@@ -1,0 +1,31 @@
+.score{
+    left: 100px;
+    padding: 25px;
+    border-radius: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 50%;
+}
+.size{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.kostka{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.pravidla{
+    list-style: none;
+    margin-top: 20px;
+    padding: 10px;
+}
+.input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 7%;
+}
